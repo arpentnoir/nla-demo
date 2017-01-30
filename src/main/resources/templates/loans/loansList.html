@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'loans')}">
+
+  <body>
+
+    <h2>Loans</h2>
+
+    <table id="users" class="table table-striped">
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>Book</th>
+            <th>Due Date</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr th:each="loan : ${selections}">
+              <td>
+                  <a th:href="@{users/__${loan.user.id}__}" th:text="${loan.user}"/></a>
+              </td>
+              <td th:text="${loan.book}"/>
+              <td th:text="${loan.dueDate}"/>
+          </tr>
+        </tbody>
+    </table>
+
+  </body>
+</html>

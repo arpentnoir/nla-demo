@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'users')}">
+
+  <body>
+  
+  
+    <h2>Owner Information</h2>
+  
+  
+    <table class="table table-striped" th:object="${user}">
+      <tr>
+        <th>Name</th>
+        <td><b th:text="*{firstName + ' ' + lastName}"></b></td>
+      </tr>
+      <tr>
+      <tr>
+        <th>Telephone</th>
+        <td th:text="*{telephone}" /></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td th:text="*{email}" /></td>
+      </tr>
+    </table>
+  
+    <br />
+    <br />
+    <br />
+    <h2>Loans</h2>
+  
+    <table class="table table-striped">
+
+      <tr th:each="loan : ${user.loans}">
+        <td valign="top">
+          <dl class="dl-horizontal">
+            <dt>Book</dt>
+            <dd th:text="${loan.book}" /></dd>
+            <dt>Due Date</dt>
+            <dd
+              th:text="${#calendars.format(loan.dueDate, 'yyyy-MM-dd')}" /></dd>
+          </dl>
+        </td>
+      </tr>
+
+    </table>
+  
+  </body>
+
+</html>
