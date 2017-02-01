@@ -31,12 +31,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * @author Juergen Hoeller
- * @author Ken Krebs
- * @author Arjen Poutsma
- * @author Michael Isvy
- */
 @Controller
 class UserController {
 
@@ -120,12 +114,6 @@ class UserController {
         }
     }
 
-    /**
-     * Custom handler for displaying an user.
-     *
-     * @param userId the ID of the user to display
-     * @return a ModelMap with the model attributes for the view
-     */
     @RequestMapping("/users/{userId}")
     public ModelAndView showUser(@PathVariable("userId") int userId) {
         ModelAndView mav = new ModelAndView("users/userDetails");

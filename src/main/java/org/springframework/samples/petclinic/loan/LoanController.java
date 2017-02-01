@@ -35,12 +35,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * @author Juergen Hoeller
- * @author Ken Krebs
- * @author Arjen Poutsma
- * @author Michael Isvy
- */
 @Controller
 class LoanController {
 
@@ -113,36 +107,5 @@ class LoanController {
       return "loans/loansList";
     }
   }
-
-//  @RequestMapping(value = "/loans/{loanId}/edit", method = RequestMethod.GET)
-//  public String initUpdateLoanForm(@PathVariable("loanId") int loanId, Model model) {
-//    Loan loan = this.loans.findById(loanId);
-//    model.addAttribute(loan);
-//    return VIEWS_USER_CREATE_OR_UPDATE_FORM;
-//  }
-//
-//  @RequestMapping(value = "/loans/{loanId}/edit", method = RequestMethod.POST)
-//  public String processUpdateLoanForm(@Valid Loan loan, BindingResult result, @PathVariable("loanId") int loanId) {
-//    if (result.hasErrors()) {
-//      return VIEWS_USER_CREATE_OR_UPDATE_FORM;
-//    } else {
-//      loan.setId(loanId);
-//      this.loans.save(loan);
-//      return "redirect:/loans/{loanId}";
-//    }
-//  }
-//
-//  /**
-//   * Custom handler for displaying an loan.
-//   *
-//   * @param loanId the ID of the loan to display
-//   * @return a ModelMap with the model attributes for the view
-//   */
-//  @RequestMapping("/loans/{loanId}")
-//  public ModelAndView showLoan(@PathVariable("loanId") int loanId) {
-//    ModelAndView mav = new ModelAndView("loans/loanDetails");
-//    mav.addObject(this.loans.findById(loanId));
-//    return mav;
-//  }
 
 }
